@@ -717,6 +717,9 @@ MonoBehaviour:
   walkSpeed: 3
   runSpeed: 6
   rotationSpeed: 10
+  landingDuration: 0.3
+  gravity: -9.81
+  jumpHeight: 2
   attackDruation: 0.8
   canMoveWhileAttacking: 0
   animator: {fileID: 1733354399}

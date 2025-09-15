@@ -63,8 +63,8 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         if(Cursor.lockState != CursorLockMode.Locked) return;
 
-        float mouseX = Input.GetAxis("MouseX") * mouseSensitivity;
-        float mouseY = Input.GetAxis("MouseY") * mouseSensitivity;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
         horizontalAngle += mouseX;
         verticalAngle -= mouseY;
@@ -103,4 +103,6 @@ public class ThirdPersonCamera : MonoBehaviour
             Cursor.visible = false;
         }
     }
+
+    
 }
