@@ -16,7 +16,7 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Input")]
     public KeyCode inventoryKey = KeyCode.I;
-    private List<ItemSlot> slots = new List<ItemSlot> ();
+    private List<InventorySlot> slots = new List<InventorySlot> ();
     private bool isInventoryOpen = false;
 
     private void Awake()
@@ -46,7 +46,7 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < inventorySize; i++)
         {
             GameObject slotObj = Instantiate(itemSlotPrefab, itemSlotParent);
-            ItemSlot slot = slotObj.GetComponent<ItemSlot>();
+            InventorySlot slot = slotObj.GetComponent<InventorySlot>();
             slots.Add(slot);
         }
     }
@@ -71,7 +71,7 @@ public class InventoryManager : MonoBehaviour
 
     public bool AddItem(ItemData item, int amount = 1)
     {
-        foreach (ItemSlot slot in slots)
+        foreach (InventorySlot slot in slots)
         {
             if (slot.item == item && slot.amount < item.maxStack)
             {
@@ -87,7 +87,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        foreach (ItemSlot slot in slots)
+        foreach (InventorySlot slot in slots)
         {
             if (slot.item == null)
             {
@@ -102,7 +102,7 @@ public class InventoryManager : MonoBehaviour
 
     public void Removeitem(ItemData item, int amount = 1)
     {
-        foreach (ItemSlot slot in slots)
+        foreach (InventorySlot slot in slots)
         {
             if (slot.item == item)
             {
@@ -115,7 +115,7 @@ public class InventoryManager : MonoBehaviour
     public int GetItemCount(ItemData item)
     {
         int count = 0;
-        foreach (ItemSlot slot in slots)
+        foreach (InventorySlot slot in slots)
         {
             if (slot.item == item)
             {
